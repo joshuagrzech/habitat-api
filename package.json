@@ -1,0 +1,22 @@
+{
+  "name": "habitatapi",
+  "version": "1.0.0",
+  "description": "API for whatBill",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npm run build && node index.js ",
+    "start": "node ./index.js",
+    "deploy": "npm run build && gcloud app deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/firestore": "^4.13.1",
+    "apollo-server": "^3.0.0",
+    "apollo-server-cloud-functions": "^3.0.0",
+    "firebase-admin": "^9.10.0",
+    "graphql": "^15.5.1",
+    "graphql-tag": "^2.12.5"
+  },
+  "devDependencies": {}
+}
