@@ -34,6 +34,6 @@ Frameworks and Libraries
 - Plaid API
 - Stripe Connect
 
-
+"gcloud functions deploy habitatapi --entry-point handler --runtime nodejs14 --trigger-http"
 
 

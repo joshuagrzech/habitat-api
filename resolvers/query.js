@@ -6,9 +6,9 @@ const query = {
         return user
     },
     house(root, { id }) {
-        return firestore.doc(`houses/${id}`).where("id", "==", `${id}`).get().then(doc => {
-            if (doc.exists) {
-                return doc.data();
+        return firestore.collection(`houses`).where("id", "==", `${id}`).get().then(doc => {
+            if (doc) {
+                return doc;
             } else {
                 throw new Error('House not found');
             }

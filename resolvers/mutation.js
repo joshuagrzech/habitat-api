@@ -25,8 +25,8 @@ const mutation = {
         console.log(input)
         const user = firestore.doc(`users/${input.input.id}`)
         await user.update({apiConnected: true, username: input.input.username, id: input.input.id});
-        const house = await firestore.collection('houses').add({users: [user.id]})
-        const update = await user.update({houseId: house.id})
+        await firestore.collection('houses').doc(input.input.id).set({apiConnected: true, id: input.input.id, users: [input.input.id]});
+        const update = await user.update({houseId: input.input.id});
        return user.get()
     },
     updateUser(parent, {id, input}) {
